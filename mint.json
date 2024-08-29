@@ -7,6 +7,15 @@
   },
   "favicon": "/favicon.svg",
   "theme": "prism",
+   "colors": {
+    "primary": "AD49E1",
+    "light": "EBD3F8",
+    "dark": "7A1CAC",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    }
+  },
   "topbarLinks": [
     {
       "name": "Support",
