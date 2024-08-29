@@ -6,6 +6,8 @@
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
+  "theme": "prism",
+ /*
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -15,6 +17,7 @@
       "to": "#07C983"
     }
   },
+  */
   "topbarLinks": [
     {
       "name": "Support",
