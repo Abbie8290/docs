@@ -7,17 +7,6 @@
   },
   "favicon": "/favicon.svg",
   "theme": "prism",
- --
-  "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
-  },
-  --
   "topbarLinks": [
     {
       "name": "Support",
@@ -36,7 +25,7 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Writing Samples",
       "icon": "book-open-cover",
       "url": "https://mintlify.com/docs"
     },
