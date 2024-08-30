@@ -59,7 +59,6 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "lrn-assignments",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
