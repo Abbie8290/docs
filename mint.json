@@ -53,14 +53,13 @@
     },
     {
       "group": "ProLearn Writing Samples",
-      "pages": [
-        "lrn-assignments"
+      "pages": ["lrn-assignments"
       ]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
+        "lrn-assignments",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
