@@ -18,42 +18,26 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Contact Me",
+      "url": "mailto:abbie8290@gmail.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/abigail-stringham-b3278a15a/"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
+      "name": "About Me",
+      "url": "about-me"
+    },
   ],
+  
   "anchors": [
     {
-      "name": "Writing Samples",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    },
-      {
-      "name": "About Me",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
+   }
   ],
+  
   "navigation": [
     {
       "group": "Get Started",
