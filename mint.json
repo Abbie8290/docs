@@ -37,18 +37,18 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Introduction",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "introduction"
       ]
     },
     {
       "group": "About Me",
       "pages": [
         "about-me/summary",
-        "about-me/skills"
+        "about-me/skills",
+        "about-me/resume",
+        "about-me/recommendations"
       ]
     },
     {
