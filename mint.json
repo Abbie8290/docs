@@ -53,7 +53,8 @@
     },
     {
       "group": "ProLearn Writing Samples",
-      "pages": ["lrn-assignments"
+      "pages": ["lrn-assignments",
+        "lrn-change-content-language"
       ]
     },
     {
