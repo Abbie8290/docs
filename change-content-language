@@ -1,0 +1,29 @@
+---
+  title: "Change your ProLearn Content Language"
+  sidebarTitle: "Change your Content Language"
+  description: "You can change your ProLearn content language to more prominently display content available to you in any of ProLearn's supported languages."
+---
+  <Note>
+Changing your ProLearn content language does not translate content. It more prominently displays content available in the selected language to you. Content items in the selected language are prioritized in your feed, search results, and browse results. Content may still appear in languages outside of your set preferred language(s).
+  </Note>
+
+  ## To Change your Preferred Content Language
+  1. Click **Profile** from the top menu in ProLearn. <br /> Your **Profile** page displays and defaults to the **Overview** tab.
+  2. Click **Settings**. <br /> Your **Profile Settings** pages displays and defaults to the Profile tab.
+  3. Click the **Account** tab.
+  4. In the _Content Language_ section, select your primary, preferred language from the **Content Language** drop-down.<br />
+  <Frame>
+    <img src="/images/profile_settings_content_language.png" />
+  </Frame>
+  5. Use the **Additional Content Languages** drop-down to select any other languages you want to see content in. Multiple selections can be made here.
+  6. Click **Save Changes**. <br /> The site reloads and displays content items in the selected language.
+
+<Info>
+Your preferred content language selection extends to your ProLearn Mobile App experience.
+</Info>
+
+<Card title="FAQ" icon="question" horizontal="true">
+  **Why is content in my feed in languages that my Content Language is not set to?** <br />
+  
+ Your preferred language is a priority for content suggestions, but it is not a filter. You might see other languages in your feed based on the skills you are following, Groups you are a member of, your followers, and your recommendations. Even if you change your content language, you may continue to see suggested content items in other languages based on relevancy.
+</Card>
