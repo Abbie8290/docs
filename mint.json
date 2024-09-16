@@ -60,7 +60,15 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Supply Connect+ Writing Samples",
+      "pages": ["supply-accept-materials",
+        "supply-partner-connections",
+        "supply-sharing-rules",
+        "supply-ticket-tags"
+      ]
+    },
+    {
+      "group": "API Documentation Examples",
       "pages": [
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
@@ -68,8 +76,7 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "github": "https://github.com/Abbie8290",
+    "linkedin": "https://www.linkedin.com/in/abigail-stringham-b3278a15a/"
   }
 }
