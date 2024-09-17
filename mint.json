@@ -1,11 +1,4 @@
 {
-  "api": {
-    "playground": {
-      "mode": "hide"
-    }
-  }
-},
-{
   "$schema": "https://mintlify.com/schema.json",
   "name": "Writing Portfolio",
   "logo": {
@@ -32,6 +25,11 @@
   "topbarCtaButton": {
     "name": "LinkedIn",
     "url": "https://www.linkedin.com/in/abigail-stringham-b3278a15a/"
+  },
+   "api": {
+    "playground": {
+      "mode": "hide"
+    }
   },
   "primaryTab": {
     "name": "Technical Writing Samples"
