@@ -31,7 +31,7 @@
 },
   "tabs": [
     {
-      "name": "About Me: Abigail Stringham",
+      "name": "About Me",
       "url": "about-me"
     }
   ],
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "group": "About Me: Abigail Stringham",
+      "group": "Abigail Stringham",
       "pages": [
         "about-me/summary",
         "about-me/skills",
