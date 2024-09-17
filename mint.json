@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Writing Portfolio",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/AS_logo_dark.png"
+    "dark": "/logo/AS_Portfolio_logo_dark.png",
+    "light": "/logo/AS_Portfolio_logo_light.png"
   },
   "favicon": "/favicon.svg",
   "theme": "prism",
