@@ -60,9 +60,8 @@
       ]
     },
     {
-      "group": "Supply Connect+ Writing Samples",
-      "pages": ["supply-accept-materials",
-        "supply-partner-connections",
+      "group": "Supply Connect Writing Samples",
+      "pages": ["supply-partner-connections",
         "supply-sharing-rules",
         "supply-ticket-tags"
       ]
