@@ -72,10 +72,8 @@
       ]
     },
     {
-      "group": "API Documentation Examples",
+      "group": "API Documentation Samples",
       "pages": [
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete",
         "api-reference/endpoint/get-surfreport"
       ]
     }
