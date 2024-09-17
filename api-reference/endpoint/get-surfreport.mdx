@@ -1,10 +1,10 @@
 ---
 title: "Get Surfreport"
 api: "GET https://api.openweathermap.org/com/surfreport/{beachId}"
-description: "Retrieves weather and water conditions and an overall recommendation related to surfing"
+description: "Retrieves surfing-related weather and water conditions for a specific beach location"
 ---
 ## Endpoints
-**surfreport/{beachId}**
+**surfreport/{beachId}**<br/>
 Gets the surf conditions for a specific beach ID
 ## Parameters
 ### Path Parameters
@@ -27,12 +27,12 @@ Gets the surf conditions for a specific beach ID
 <CodeGroup>
 
 ```curl cURL
-curl -I -X GET "https://api.openweathermap.org/com/surfreport/123?appid=APIKEY"
+curl -I -X GET "https://api.openweathermap.org/com/surfreport/89?appid=APIKEY&days=1"
 ```
 
 ```javascript JavaScript - jQuery
 var settings = {
-  "url": "https://api.openweathermap.org/com/surfreport/123?appid=APIKEY",
+  "url": "https://api.openweathermap.org/com/surfreport/89?appid=APIKEY&days=1",
   "method": "GET",
   "timeout": 0,
 };
@@ -43,7 +43,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 ```http HTTP
-GET /com/surfreport/123?appid=APIKEY HTTP/1.1
+GET /com/surfreport/89?appid=APIKEY&days=1 HTTP/1.1
 Host: api.openweathermap.org
 ```
 
@@ -51,7 +51,7 @@ Host: api.openweathermap.org
 var request = require('request');
 var options = {
   'method': 'GET',
-  'url': 'https://api.openweathermap.org/com/surfreport/123?appid=APIKEY',
+  'url': 'https://api.openweathermap.org/com/surfreport/89?appid=APIKEY&days=1',
   'headers': {
   }
 };
@@ -65,7 +65,7 @@ request(options, function (error, response) {
 require "uri"
 require "net/http"
 
-url = URI("https://api.openweathermap.org/com/surfreport/123?appid=APIKEY")
+url = URI("https://api.openweathermap.org/com/surfreport/89?appid=APIKEY&days=1")
 
 https = Net::HTTP.new(url.host, url.port)
 https.use_ssl = true
@@ -75,9 +75,8 @@ request = Net::HTTP::Get.new(url)
 response = https.request(request)
 puts response.read_body
 ```
-
 </CodeGroup>
-In the above requests, replace APIKEY with your actual API Key value.
+In the above requests, replace `APIKEY` with your actual API Key value.
 ## Response
 `application/json`
 
@@ -154,5 +153,5 @@ Each of the three factors is scored with a maximum of 33.33 points, depending on
   </Tab>
 </Tabs>
 ### Response Codes
-200 - Request successful.
+200 - Request successful. <br />
 400 - Bad Request. A provided error message will explain further.
