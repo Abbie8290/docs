@@ -1,5 +1,158 @@
 ---
 title: "Get Surfreport"
 api: "GET https://api.openweathermap.org/com/surfreport/{beachId}"
-description: "This resource contains information about surfing conditions for beaches such as water temperature and wind and tide conditions. Includes an overall recommendation about whether to surf at a specified beach."
+description: "Retrieves weather and water conditions and an overall recommendation related to surfing"
 ---
+## Endpoints
+**surfreport/{beachId}**
+Gets the surf conditions for a specific beach ID
+## Parameters
+### Path Parameters
+<ParamField path="{beachId}" type="string" required="true">
+  The value for the beach you want to look up. Valid `beachId` values are available [here](https://api.openweathermap.org/com).
+</ParamField>
+### Query Parameters
+<ParamField query="days" type="integer" default="3">
+ The number of days to include in the response. Maximum value is 7. Conditions are listed out by hour for each day unless the `time` parameter is specified.
+</ParamField>
+<ParamField query="time" type="integer">
+ The time the report is created for (Unix format (ms since 1970) in UTC or GMT). If a time is specified, only conditions for that hour will be returned in the response.
+</ParamField>
+<ParamField query="units" type="string">
+ Accepted values:
+- `imperial` : Response will include feet and knots (nautical miles per hours) as measuremments (default).
+- `metrics` : Response will include centimeters and kilometers as measurements.
+</ParamField>
+## Sample Request
+<CodeGroup>
+
+```curl cURL
+curl -I -X GET "https://api.openweathermap.org/com/surfreport/123?appid=APIKEY"
+```
+
+```javascript JavaScript - jQuery
+var settings = {
+  "url": "https://api.openweathermap.org/com/surfreport/123?appid=APIKEY",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+```http HTTP
+GET /com/surfreport/123?appid=APIKEY HTTP/1.1
+Host: api.openweathermap.org
+```
+
+```nodejs NodeJs
+var request = require('request');
+var options = {
+  'method': 'GET',
+  'url': 'https://api.openweathermap.org/com/surfreport/123?appid=APIKEY',
+  'headers': {
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+```
+
+```ruby Ruby
+require "uri"
+require "net/http"
+
+url = URI("https://api.openweathermap.org/com/surfreport/123?appid=APIKEY")
+
+https = Net::HTTP.new(url.host, url.port)
+https.use_ssl = true
+
+request = Net::HTTP::Get.new(url)
+
+response = https.request(request)
+puts response.read_body
+```
+
+</CodeGroup>
+In the above requests, replace APIKEY with your actual API Key value.
+## Response
+`application/json`
+
+<Tabs>
+  <Tab title="Sample Response">
+    ```json
+{
+    "surfreport": [
+        {
+            "beach": "Santa Cruz",
+            "monday": {
+                "1pm": {
+                    "tide": 5,
+                    "wind": 15,
+                    "watertemp": 80,
+                    "surfheight": 5,
+                    "recommendation": "Go surfing!"
+                },
+                "2pm": {
+                    "tide": -1,
+                    "wind": 1,
+                    "watertemp": 50,
+                    "surfheight": 3,
+                    "recommendation": "Surfing conditions are okay, not great."
+                },
+                "3pm": {
+                    "tide": -1,
+                    "wind": 10,
+                    "watertemp": 65,
+                    "surfheight": 1,
+                    "recommendation": "Not a good day for surfing."
+                }
+                ...
+            }
+        }
+    ]
+}
+```
+
+  </Tab>
+  <Tab title="Response Definitions">
+    <ResponseField name="beach" type="string">
+  The beach you selected based on the beach ID in the request. This is the official beach name as described in the National Park Service Geodatabase.
+</ResponseField>
+<ResponseField name="{day}" type="object">
+  The day of the week. A maximum of 7 days can be returned in the response.
+</ResponseField>
+<ResponseField name="{time}" type="string">
+  The time for the conditions. This item is only included if a time parameter is specified in the request.
+</ResponseField>
+<ResponseField name="{day}/{time}/tide" type="integer">
+The level of tide at the beach for a specific day and time.<br/><br/> Tide is the distance inland that the water rises to, and can be a positive or negative number. When the tide is out, the number is negative. When the tide is in, the number is positive. The 0 point reflects the line when the tide is neither going in nor out but is in transition between the two states.
+</ResponseField>
+<ResponseField name="{day}/{time}/wind" type="integer">
+The wind speed at the beach. Wind affects the surf height and general wave conditions. Measurements are based on the specified `units` parameter (default is nautical miles per hour).
+</ResponseField>
+<ResponseField name="{day}/{time}/watertemp" type="integer">
+The temperature of the water, returned in Fahrenheit or Celsius depending upon the units you specify (default is Celsius).
+</ResponseField>
+<ResponseField name="{day}/{time}/surfheight" type="integer">
+The height of the waves, returned in either feet or centimeters depending on the units you specify (default is feet).
+</ResponseField>
+<ResponseField name="{day}/{time}/recommendation" type="string">
+An overall recommendation based on a combination of the various factors (wind, watertemp, surfheight). Three responses are possible:<br/>
+1. `Go Surfing!`
+2. `Surfing conditions are okay, not great.`
+3. `Not a good day for surfing.` <br/><br/>
+Each of the three factors is scored with a maximum of 33.33 points, depending on the ideal for each element. The three elements are combined to form a percentage score: <br/>
+- 81% to 100% results in response 1
+- 60% - 80% results in response 2
+- 0% to 59% results in response 3
+
+</ResponseField>
+  </Tab>
+</Tabs>
+### Response Codes
+200 - Request successful.
+400 - Bad Request. A provided error message will explain further.
