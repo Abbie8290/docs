@@ -1,0 +1,52 @@
+---
+title: "Create Meeting"
+api: "POST https://api.onlinecalendar123.org/com/meetings"
+description: "Creates a new meeting in the calendar"
+---
+## Request Body
+`application/json`
+
+<Tabs>
+  <Tab title="Sample Request">
+    ```json
+{
+"meeting" : {
+"time": "2024-10-31 10:00",
+"duration": 60,
+"description": "Strategic Planning Meeting",
+"location": "Building 12, Room 345",
+"reminder": 15,
+"invitees": ["ross@example.com", "rachel@example.com",
+"joey@example.com", "monica@example.com"]
+}
+}
+```
+
+  </Tab>
+  <Tab title="Request Definitions">
+  <ResponseField name="meeting" type="object" required="true">
+  The meeting data object.
+</ResponseField>
+<ResponseField name="{time}" type="string" required="true">
+  The date and time of the meeting. Must be formmatted as YYYY-MM-DD HH:MM. Timezone is in GMT.
+</ResponseField>
+<ResponseField name="{duration}" type="integer" required="true">
+  The duration of the meeting in minutes.
+</ResponseField>
+<ResponseField name="{description}" type="string" required="true">
+A text description for the meeting.
+</ResponseField>
+<ResponseField name="{location}" type="string" default="null">
+The location of the meeting.
+</ResponseField>
+<ResponseField name="{reminder}" type="integer" default="10">
+The amount of time (in minutes) before the meeting time a reminder should be sent to the invitees.
+</ResponseField>
+<ResponseField name="{invitees}" type="array of string">
+A list of valid email address(es) of people invited to the meeting. Seperate emails using a comma [,].
+</ResponseField>
+  </Tab>
+</Tabs>
+
+## Returns
+Returns a meeting object if request is successful. Throws an error otherwise.
