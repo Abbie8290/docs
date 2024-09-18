@@ -20,6 +20,10 @@
     {
       "name": "Contact Me",
       "url": "mailto:abbie8290@gmail.com"
+    },
+     {
+      "name": "Resume",
+      "url": "/about-me/resume.pdf"
     }
   ],
   "topbarCtaButton": {
