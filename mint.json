@@ -75,7 +75,8 @@
       "group": "API Documentation Samples",
       "pages": [
         "api-reference/endpoint/get-forecast",
-        "api-reference/endpoint/get-surfreport"
+        "api-reference/endpoint/get-surfreport",
+        "api-reference/endpoint/create-meeting"
       ]
     }
   ],
