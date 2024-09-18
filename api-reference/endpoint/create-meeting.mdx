@@ -7,22 +7,6 @@ description: "Creates a new meeting in the calendar"
 `application/json`
 
 <Tabs>
-  <Tab title="Sample Request">
-    ```json
-{
-"meeting" : {
-"time": "2024-10-31 10:00",
-"duration": 60,
-"description": "Strategic Planning Meeting",
-"location": "Building 12, Room 345",
-"reminder": 15,
-"invitees": ["ross@example.com", "rachel@example.com",
-"joey@example.com", "monica@example.com"]
-}
-}
-```
-
-  </Tab>
   <Tab title="Request Definitions">
   <ResponseField name="meeting" type="object" required="true">
   The meeting data object.
@@ -45,6 +29,21 @@ The amount of time (in minutes) before the meeting time a reminder should be sen
 <ResponseField name="{invitees}" type="array of string">
 A list of valid email address(es) of people invited to the meeting. Seperate emails using a comma [,].
 </ResponseField>
+  </Tab>
+<Tab title="Sample Request">
+    ```json
+{
+"meeting" : {
+"time": "2024-10-31 10:00",
+"duration": 60,
+"description": "Strategic Planning Meeting",
+"location": "Building 12, Room 345",
+"reminder": 15,
+"invitees": ["ross@example.com", "rachel@example.com",
+"joey@example.com", "monica@example.com"]
+}
+}
+```
   </Tab>
 </Tabs>
 
