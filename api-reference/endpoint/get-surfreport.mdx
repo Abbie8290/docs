@@ -1,11 +1,11 @@
 ---
 title: "Get Surfreport"
 api: "GET https://api.openweathermap.org/com/surfreport/{beachId}"
-description: "Retrieves surfing-related weather and water conditions for a specific beach location"
+description: "Retrieves surfing-related weather and water conditions"
 ---
 ## Endpoints
 **GET** `surfreport/{beachId}`<br/>
-Gets the surf conditions for a specific beach ID
+Gets the surfing weather and water conditions for a specific beach location
 ## Parameters
 ### Path Parameters
 <ParamField path="{beachId}" type="string" required="true">
@@ -16,11 +16,11 @@ Gets the surf conditions for a specific beach ID
  The number of days to include in the response. Maximum value is 7. Conditions are listed out by hour for each day unless the `time` parameter is specified.
 </ParamField>
 <ParamField query="time" type="integer">
- The time the report is created for (Unix format (ms since 1970) in UTC or GMT). If a time is specified, only conditions for that hour will be returned in the response.
+ The time the report retrieves conditions for. Value must be in Unix format (ms since 1970) in UTC or GMT. If a time is specified, only conditions for that hour will be returned in the response.
 </ParamField>
-<ParamField query="units" type="string">
+<ParamField query="units" type="string" default="imperial">
  Accepted values:
-- `imperial` : Response will include feet and knots (nautical miles per hours) as measuremments (default).
+- `imperial` : Response will include feet and knots (nautical miles per hours) as measuremments.
 - `metrics` : Response will include centimeters and kilometers as measurements.
 </ParamField>
 ## Sample Request
@@ -125,19 +125,19 @@ In the above requests, replace `APIKEY` with your actual API Key value.
   The day of the week. A maximum of 7 days can be returned in the response.
 </ResponseField>
 <ResponseField name="{time}" type="string">
-  The time for the conditions. This item is only included if a time parameter is specified in the request.
+  The time for the conditions.
 </ResponseField>
 <ResponseField name="{day}/{time}/tide" type="integer">
 The level of tide at the beach for a specific day and time.<br/><br/> Tide is the distance inland that the water rises to, and can be a positive or negative number. When the tide is out, the number is negative. When the tide is in, the number is positive. The 0 point reflects the line when the tide is neither going in nor out but is in transition between the two states.
 </ResponseField>
 <ResponseField name="{day}/{time}/wind" type="integer">
-The wind speed at the beach. Wind affects the surf height and general wave conditions. Measurements are based on the specified `units` parameter (default is nautical miles per hour).
+The wind speed at the beach. Wind affects the surf height and general wave conditions. Measurements are based on the `units` parameter specified in the request (default is nautical miles per hour).
 </ResponseField>
 <ResponseField name="{day}/{time}/watertemp" type="integer">
-The temperature of the water, returned in Fahrenheit or Celsius depending upon the units you specify (default is Celsius).
+The temperature of the water, returned in Fahrenheit or Celsius depending on the `units` parameter specified in the request (default is Celsius).
 </ResponseField>
 <ResponseField name="{day}/{time}/surfheight" type="integer">
-The height of the waves, returned in either feet or centimeters depending on the units you specify (default is feet).
+The height of the waves, returned in either feet or centimeters depending on the  `units` parameter specified in the request (default is feet).
 </ResponseField>
 <ResponseField name="{day}/{time}/recommendation" type="string">
 An overall recommendation based on a combination of the various factors (wind, watertemp, surfheight). Three responses are possible:<br/>
@@ -148,7 +148,6 @@ Each of the three factors is scored with a maximum of 33.33 points, depending on
 - 81% to 100% results in response 1
 - 60% to 80% results in response 2
 - 0% to 59% results in response 3
-
 </ResponseField>
   </Tab>
 </Tabs>
